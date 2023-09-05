@@ -6,15 +6,19 @@ import { division } from "./division.js";
 
 import inquirer from "inquirer"
 
+let contProject = true;
 
+while(contProject){
 
-const Num1 = await inquirer.prompt([{
+console.log(`Wellcome to Janisar's Calculator`);
+
+const Num1:{number1:number} = await inquirer.prompt([{
     message: "Enter first number: ",
     type: "number",
     name: "number1"
 }]);
 
-const operation = await inquirer.prompt([{
+const operation:{operation1:string} = await inquirer.prompt([{
     message: "Enter operation press ( + , - , * , / ): ",
     type: "list",
     name: "operation1",
@@ -22,7 +26,7 @@ const operation = await inquirer.prompt([{
 }]);
 
 
-const Num2 = await inquirer.prompt([{
+const Num2:{number2:number} = await inquirer.prompt([{
     message: "Enter second number: ",
     type: "number",
     name: "number2"
@@ -49,3 +53,21 @@ else{
     console.log("Enter correct operation sign ( + , - , * , / )")
 }
 
+
+
+//userinput for exit program or continue
+
+const contiPro:{contiproject:string} = await inquirer.prompt({
+    message: "if you continue calculator (y/n): ",
+    type: "input",
+    name: "contiproject"
+})
+
+if(contiPro.contiproject === "y"){
+    contProject = true;
+}
+else{
+    contProject = false;
+}
+
+}

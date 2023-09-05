@@ -15,8 +15,10 @@ import showBanner from 'node-banner';
 
 
 async function GuessingGame() {
-    
+   
+    let continueGame = true;
 
+    while(continueGame){
 
 const selectLevel:{level:string} = await inquirer.prompt([{
     message: "Select game level: ",
@@ -28,7 +30,6 @@ const selectLevel:{level:string} = await inquirer.prompt([{
 
 let points = 0;
 let continueWin = true;
-
 
 while(continueWin)
 {
@@ -90,9 +91,28 @@ else{
 }
 console.log(chalk.yellow(`your total score is ${points}`));
 
+
+
+
+let conGame:{contgame:string} = await inquirer.prompt({
+    message: "if you want to continue press (y/n): ",
+    type: 'input',
+    name: "contgame"
+})
+
+
+
+
+if(conGame.contgame === "y" || conGame.contgame === "Y"){
+    continueGame = true;
+}
+else continueGame = false
+
 }
 
 
-setTimeout(()=>{
+
+}
+setTimeout(() => {
     GuessingGame()
-},1000)
+}, 500);
