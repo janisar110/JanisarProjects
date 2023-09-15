@@ -9,7 +9,7 @@ import chalk from "chalk";
 import showBanner from 'node-banner';
 
 (async () => {
-    await showBanner('Guessing Game',"Guess the number","yellow");
+    await showBanner("Guessing Game","Guess the number","red");
 })();
 
 

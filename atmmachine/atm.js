@@ -55,7 +55,7 @@ async function atm() {
                     type: "number"
                 }]);
             if (sendMoneyInp.sendAmount < AccountBalance) {
-                AccountBalance = sendMoney(AccountBalance, sendMoneyInp.sendAmount);
+                AccountBalance = sendMoney(AccountBalance, sendMoneyInp.sendAmount, sendMoneyInp.accNum, userInp.userid);
                 console.log(`${sendMoneyInp.sendAmount} is Succesfully sended. your remaing amount is ${AccountBalance}`);
             }
             else
